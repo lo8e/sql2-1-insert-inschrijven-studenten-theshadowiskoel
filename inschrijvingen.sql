@@ -17,3 +17,7 @@ INSERT INTO klassen_studenten(ov_nummer, klas_code) VALUES
 	(90004, 'lo9e-amo2');
 
 UPDATE studenten SET geboortedatum = '2002-06-22' WHERE ov_nummer = 90002;
+
+UPDATE studenten SET actief = FALSE WHERE inschrijvings_datum < '2017-01-01';
+
+SELECT studenten.ov_nummer, CONCAT(studenten.voornaam, " " , studenten.tussenvoegsel, " ", studenten.achternaam) AS volledige_naam, klassen.klas_code, klassen.cohort,  
